@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "c1fbf55d-f239-40da-9ad7-ab88a09fd862",
+		"name": "ApiOdev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "21597032"
+	},
+	"item": [
+		{
+			"name": "Tüm Postları Getirme",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Kullanıcı id si 1 olan kullanıcının postlarını getirme",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts?userid=1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 id li posta ait tüm yorumları getiren istek",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/posts/1/comments"
+			},
+			"response": []
+		},
+		{
+			"name": "Id=1 Olan Postun 5. Commentini Getirme",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1/comments?id=5",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1 id li kulalnıcıyı getirme",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Yeni Kullanıcı Ekleme - 404 found",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Büşra Betül\",\r\n    \"username\": \"betuska\",\r\n    \"email\": \"busra.betul67@gmail.com\",\r\n    \"address\": {\r\n        \"street\": \"Pınar Caddesi\",\r\n        \"suite\": \"Apt. 15\",\r\n        \"city\": \"Adana\",\r\n        \"zipcode\": \"01260\",\r\n        \"geo\": {\r\n            \"lat\": \"37.03891097991131\",\r\n            \"lng\": \"35.42312370317952\"\r\n        }\r\n    },\r\n    \"phone\": \"555555555\",\r\n    \"website\": \"betuldinler.com\",\r\n    \"company\": {\r\n        \"name\": \"Tödeb\",\r\n        \"catchPhrase\": \"Apı .net5\",\r\n        \"bs\": \"Türkiye'de faaliyet gösteren ödeme kuruluşları ve elektronik para kuruluşlarının üye olduğu, tüzel kişiliği haiz ve kamu kurumu niteliğinde meslek kuruluşudur.\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://jsonplaceholder.typicode.com/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "User id=1 olan kullanıcının yorumlarına yeni yorum ekleme",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 101,\r\n    \"title\": \"iyi_yorum\",\r\n    \"body\": \"beğenildi\",\r\n    \"userId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://jsonplaceholder.typicode.com/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/users",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"name\": \"Büşra Betül\",\r\n        \"username\": \"Bret\",\r\n        \"email\": \"Sincere@april.biz\",\r\n        \"address\": {\r\n            \"street\": \"Kulas Light\",\r\n            \"suite\": \"Apt. 556\",\r\n            \"city\": \"Gwenborough\",\r\n            \"zipcode\": \"92998-3874\",\r\n            \"geo\": {\r\n                \"lat\": \"-37.3159\",\r\n                \"lng\": \"81.1496\"\r\n            }\r\n        },\r\n        \"phone\": \"1-770-736-8031 x56442\",\r\n        \"website\": \"hildegard.org\",\r\n        \"company\": {\r\n            \"name\": \"Romaguera-Crona\",\r\n            \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n            \"bs\": \"harness real-time e-markets\"\r\n        }\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://jsonplaceholder.typicode.com/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE metot",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/users/{1}"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT ile id si 1 olan kullanıcıyı güncelleştirme",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"name\": \"Büşra Dİnler\",\r\n    \"username\": \"betuska\",\r\n    \"email\": \"busra.betul67@gmail.com\",\r\n    \"address\": {\r\n        \"street\": \"Pınar Caddesi\",\r\n        \"suite\": \"Apt. 15\",\r\n        \"city\": \"Adana\",\r\n        \"zipcode\": \"01260\",\r\n        \"geo\": {\r\n            \"lat\": \"37.03891097991131\",\r\n            \"lng\": \"35.42312370317952\"\r\n        }\r\n    },\r\n    \"phone\": \"555555555\",\r\n    \"website\": \"betuldinler.com\",\r\n    \"company\": {\r\n        \"name\": \"Tödeb\",\r\n        \"catchPhrase\": \"Apı .net5\",\r\n        \"bs\": \"Türkiye'de faaliyet gösteren ödeme kuruluşları ve elektronik para kuruluşlarının üye olduğu, tüzel kişiliği haiz ve kamu kurumu niteliğinde meslek kuruluşudur.\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://jsonplaceholder.typicode.com/users/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Users Listesi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/users"
+			},
+			"response": []
+		},
+		{
+			"name": "5 numaralı postu silme",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://jsonplaceholder.typicode.com/posts/5"
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Kullanım Örneği",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"userId\": 10,\r\n        \"id\": 100,\r\n        \"title\": \"naber \",\r\n        \"body\": \"cupiditate quo est a modi nesciunt soluta\\nipsa voluptas error itaque dicta in\\nautem qui minus magnam et distinctio eum\\naccusamus ratione error aut\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://jsonplaceholder.typicode.com/posts/100"
+			},
+			"response": []
+		}
+	]
+}
